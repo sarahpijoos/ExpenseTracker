@@ -6,8 +6,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class ApplicationTests {
 
+	//will fail if the application context cannot star
 	@Test
 	void contextLoads() {
 	}
+
+
 
 }
