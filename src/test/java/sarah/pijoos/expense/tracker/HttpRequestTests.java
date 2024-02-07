@@ -20,13 +20,12 @@ public class HttpRequestTests {
     private TestRestTemplate testRestTemplate;
 
     @Test
-    void endpointShouldReturnGreetingAndName()throws Exception{
+    void endpointShouldReturnGreetingAndName(){
 
         JsonObject expected = new JsonObject();
         expected.addProperty("name", "Sarah");
 
         assertThat(this.testRestTemplate.getForObject("http://localhost:" +
                 port + "/hello/Sarah", String.class)).isEqualTo(expected.toString());
-
     }
 }
