@@ -13,14 +13,17 @@ import sarah.pijoos.expense.tracker.dtos.HelloDTO;
 @RestController
 public class Controller {
 
-    @Operation(summary = "Greeting test endpoint", description = "Returns a greeting with the entered name")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Successfully executed"),
-    })
-    @GetMapping(value = "/v1/hello/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<HelloDTO> hello(@PathVariable String name) {
-        HelloDTO response = new HelloDTO();
-        response.setName(name);
-        return ResponseEntity.ok(response);
-    }
+  @Operation(
+      summary = "Greeting test endpoint",
+      description = "Returns a greeting with the entered name")
+  @ApiResponses(
+      value = {
+        @ApiResponse(responseCode = "200", description = "Successfully executed"),
+      })
+  @GetMapping(value = "/v1/hello/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<HelloDTO> hello(@PathVariable String name) {
+    HelloDTO response = new HelloDTO();
+    response.setName(name);
+    return ResponseEntity.ok(response);
+  }
 }
