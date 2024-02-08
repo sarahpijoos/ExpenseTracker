@@ -1,5 +1,8 @@
 package sarah.pijoos.expense.tracker.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +13,11 @@ import sarah.pijoos.expense.tracker.dtos.HelloDTO;
 @RestController
 public class Controller {
 
-    @GetMapping(value = "/hello/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Greeting test endpoint", description = "Returns a greeting with the entered name")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully executed"),
+    })
+    @GetMapping(value = "/v1/hello/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<HelloDTO> hello(@PathVariable String name) {
         HelloDTO response = new HelloDTO();
         response.setName(name);
