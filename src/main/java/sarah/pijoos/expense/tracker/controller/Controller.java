@@ -17,7 +17,7 @@ public class Controller {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successfully executed"),
     })
-    @GetMapping(value = "/hello/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/v1/hello/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<HelloDTO> hello(@PathVariable String name) {
         HelloDTO response = new HelloDTO();
         response.setName(name);
