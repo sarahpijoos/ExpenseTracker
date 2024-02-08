@@ -1,4 +1,4 @@
-.PHONY: clean build test compile run install dependencies
+.PHONY: clean build test compile run install dependencies format lint
 
 clean:
 	@mvn clean
@@ -14,6 +14,12 @@ dependencies:
 
 test:
 	@mvn test
+
+format:
+	@mvn spotless:apply
+
+lint:
+	@mvn spotless:check
 
 compile:
 	@mvn compile
