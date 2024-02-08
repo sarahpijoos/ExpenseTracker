@@ -1,11 +1,16 @@
-.PHONY: clean build test compile run
+.PHONY: clean build test compile run install dependencies
 
 clean:
 	@mvn clean
 
-build:
-	@mvn clean install package
+install:
+	@mvn clean install
 
+build:
+	@mvn clean package
+
+dependencies:
+	@mvn dependency:resolve dependency:resolve-plugins
 
 test:
 	@mvn test
