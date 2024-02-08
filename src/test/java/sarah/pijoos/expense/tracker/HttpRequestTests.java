@@ -26,6 +26,6 @@ public class HttpRequestTests {
         expected.addProperty("name", "Sarah");
 
         assertThat(this.testRestTemplate.getForObject("http://localhost:" +
-                port + "/hello/Sarah", String.class)).isEqualTo(expected.toString());
+                port + "/api/v1/hello/Sarah", String.class)).isEqualTo(expected.toString());
     }
 }
