@@ -89,7 +89,7 @@
 				<configuration>
 <!--					<encoding>UTF-8</encoding>-->
 					<configLocation>google_checks.xml</configLocation>
-					<consoleOutput>true</consoleOutput>
+					<consoleOutput>false</consoleOutput>
 					<linkXRef>false</linkXRef>
 					<violationSeverity>warning</violationSeverity>
 					<failOnViolation>true</failOnViolation>
