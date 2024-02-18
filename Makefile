@@ -19,7 +19,7 @@ format:
 	@mvn spotless:apply
 
 lint:
-	@mvn spotless:check
+	@mvn spotless:apply spotless:check checkstyle:check
 
 compile:
 	@mvn compile
