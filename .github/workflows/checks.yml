@@ -22,7 +22,7 @@ jobs:
       - name: Package With Maven
         run: mvn package
       - name: Update dependency graph
-        uses: advanced-security/maven-dependency-submission-action@v3
+        uses: advanced-security/maven-dependency-submission-action@v4
         with:
           ignore-maven-wrapper: True
 
