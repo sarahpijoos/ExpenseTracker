@@ -19,6 +19,8 @@ jobs:
           java-version: '21'
           distribution: 'corretto'
           cache: maven
+      - name: Install Dependencies
+        run: mvn dependency:resolve dependency:resolve-plugins
       - name: Package With Maven
         run: mvn package
       - name: Update dependency graph
@@ -36,6 +38,8 @@ jobs:
         java-version: '21'
         distribution: 'corretto'
         cache: maven
+    - name: Install Dependencies
+      run: mvn dependency:resolve dependency:resolve-plugins
     - name: Spotless Lint
       run: mvn spotless:check
     - name: Checkstyle Lint
@@ -51,6 +55,8 @@ jobs:
           java-version: '21'
           distribution: 'corretto'
           cache: maven
+      - name: Install Dependencies
+        run: mvn dependency:resolve dependency:resolve-plugins
       - name: Run Tests
         run: mvn test
 
