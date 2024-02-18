@@ -26,3 +26,6 @@ compile:
 
 run: build
 	@java -jar target/*.jar
+
+dev:
+	@mvn spring-boot:run
