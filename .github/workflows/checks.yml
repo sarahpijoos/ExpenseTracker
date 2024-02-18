@@ -1,4 +1,4 @@
-name: Package with maven
+name: CI Checks
 
 on:
   push:
