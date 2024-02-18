@@ -38,3 +38,5 @@ jobs:
         cache: maven
     - name: Spotless Lint
       run: mvn spotless:check
+    - name: Checkstyle Lint
+      run: mvn checkstyle:check
