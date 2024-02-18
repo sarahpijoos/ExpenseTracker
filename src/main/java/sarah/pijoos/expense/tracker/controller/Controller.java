@@ -8,11 +8,21 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import sarah.pijoos.expense.tracker.dtos.HelloDTO;
+import sarah.pijoos.expense.tracker.dtos.HelloDto;
 
+/**
+ * This is controller is responsible for testing the endpoint connection during the initial project
+ * set up.
+ */
 @RestController
 public class Controller {
 
+  /**
+   * Sends a greeting response with the entered name.
+   *
+   * @param name The name you want to include in the greeting.
+   * @return ResponseEntity with the greeting with the specified name.
+   */
   @Operation(
       summary = "Greeting test endpoint",
       description = "Returns a greeting with the entered name")
@@ -21,8 +31,8 @@ public class Controller {
         @ApiResponse(responseCode = "200", description = "Successfully executed"),
       })
   @GetMapping(value = "/v1/hello/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<HelloDTO> hello(@PathVariable String name) {
-    HelloDTO response = new HelloDTO();
+  public ResponseEntity<HelloDto> hello(@PathVariable String name) {
+    HelloDto response = new HelloDto();
     response.setName(name);
     return ResponseEntity.ok(response);
   }
