@@ -59,4 +59,3 @@ jobs:
         run: mvn dependency:resolve dependency:resolve-plugins
       - name: Run Tests
         run: mvn test
-
