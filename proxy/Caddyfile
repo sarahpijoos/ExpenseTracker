@@ -1,0 +1,10 @@
+:80 {
+    handle_path /pgadmin* {
+        rewrite * /pgadmin{uri}
+        reverse_proxy dev-expense-tracker-pgadmin:80
+    }
+
+    handle_path /private/expenses/* {
+        reverse_proxy dev-expense-tracker-api:8080
+    }
+}
