@@ -1,0 +1,57 @@
+version: "3.8"
+services:
+  dev-expense-tracker-db:
+    image: postgres:alpine3.18
+    container_name: expense-db
+    environment:
+      POSTGRES_DB: ${DEV_DATABASE_NAME}
+      POSTGRES_USER: ${DEV_DATABASE_USER}
+      POSTGRES_PASSWORD: ${DEV_DATABASE_PASSWORD}
+    networks:
+      - dev-postgres-expense-network
+    volumes:
+      - dev-postgres-data:/var/lib/postgresql/data
+    restart: always
+
+  dev-expense-tracker-pgadmin:
+    image: dpage/pgadmin4:7.8
+    container_name: expense-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${DEV_PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${DEV_PGADMIN_PASSWORD}
+      SCRIPT_NAME: /pgadmin
+    networks:
+      - dev-postgres-expense-network
+    volumes:
+      - dev-pgadmin-data:/var/lib/pgadmin
+    restart: always
+
+  dev-expense-tracker-api:
+    container_name: expense-tracker-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - dev-postgres-expense-network
+    restart: always
+
+  dev-expense-tracker-site:
+    container_name: expense-tracker-site
+    build:
+      context: ./proxy/
+      dockerfile: Dockerfile
+    networks:
+      - dev-postgres-expense-network
+    ports:
+      - "80:80"
+    restart: always
+
+networks:
+  dev-postgres-expense-network:
+    driver: bridge
+
+volumes:
+  dev-postgres-data:
+    external: false
+  dev-pgadmin-data:
+    external: false
