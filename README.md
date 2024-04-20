@@ -36,3 +36,18 @@ NOTE: Expense tracker is still very early in development and with that comes a l
   * Vite
   * Node
   * npm
+ 
+## How to run ExpenseTracker
+
+1. Clone this repository
+2. Ensure you have docker and the docker-compose plugin installed (Usually included with newer installations of docker)
+3. In the base directory of the project/repository, run the following command: `docker compose up --build` (`docker-compose up --build`)
+
+<hr></hr>
+
+- Access API Docs at localhost/private/expenses/api/swagger-ui/index.html
+  - Change the url provided by swagger from `https://petstore.swagger.io/v2/swagger.json` to `/private/expenses/api/docs`
+
+## How to contribute
+
+Currently this project is very early in development and therefore is not open to contributions. Please keep an eye on this repository to see when contributions are welcome.
