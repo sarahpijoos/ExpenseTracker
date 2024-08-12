@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/sarahpijoos/ExpenseTracker/compare/v0.1.0...v0.1.1) (2024-08-12)
+
+
+### Bug Fixes
+
+* **Workflows:** Change release-please permissions to have package write access ([83f684d](https://github.com/sarahpijoos/ExpenseTracker/commit/83f684dc4017e1fcc5bc5d1c33b329082a0c721c))
+
 ## 0.1.0 (2024-08-12)
 
 
