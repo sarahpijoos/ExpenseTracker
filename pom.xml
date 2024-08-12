@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>sarah.pijoos</groupId>
 	<artifactId>expense.tracker</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>expense.tracker</name>
 	<description>Expense Tracker Personal Project</description>
 	<properties>
